@@ -22,9 +22,11 @@ public class Employee extends Person {
 
             System.out.print("Nhap tuoi: ");
             this.age = scanner.nextInt();
+            scanner.nextLine();
 
             System.out.print("Nhap diem: ");
             this.Score = scanner.nextFloat();
+            scanner.nextLine();
         } catch (Exception e) {
             System.out.println("Du lieu nhap vao khong hop le!");
         }
@@ -32,40 +34,32 @@ public class Employee extends Person {
 
     @Override
     public void show() {
-        System.out.print("|----------------------------------|");
-        System.out.print("| ID: " + this.EmployeeId + " |");
-        System.out.print("| Score: " + this.Score + " |");
-        System.out.print("| Name: " + this.name + "|");
-        System.out.print("| Age: " + this.age + " |");
-        System.out.print("|----------------------------------|");
+        System.out.println("|----------------------------------|");
+        System.out.println("| ID: " + this.EmployeeId + " |");
+        System.out.println("| Score: " + this.Score + " |");
+        System.out.println("| Name: " + this.name + "|");
+        System.out.println("| Age: " + this.age + " |");
+        System.out.println("|----------------------------------|");
     }
 
     public void edit(Scanner scanner) {
-        System.out.print("-== Chinh sua thong tin cho " + this.EmployeeId + " (bo trong de khong thay doi)");
-
-        String newName = this.name;
-        float newScore = this.Score;
-        int newAge = this.age;
-
+        System.out.println("-== Chinh sua thong tin cho " + this.EmployeeId + " (bo trong de khong thay doi)");
         try {
             System.out.print("Nhap ten: ");
-            newName = scanner.nextLine();
-        }
-        catch (Exception e) { newName = this.name; }
-        finally { this.name = newName; }
+            String newName = scanner.nextLine();
+            if (!newName.isEmpty()) this.name = newName;
+        } catch (Exception e) {}
 
         try {
             System.out.print("Nhap tuoi: ");
-            newAge = scanner.nextInt();
-        }
-        catch (Exception e) { newAge = this.age; }
-        finally { this.age = newAge; }
+            String newAge = scanner.nextLine();
+            if (!newAge.isEmpty()) this.age = Integer.parseInt(newAge);
+        } catch (Exception e) { }
 
         try {
             System.out.print("Nhap diem: ");
-            newScore = scanner.nextFloat();
-        }
-        catch (Exception e) { newScore = this.Score; }
-        finally { this.Score = newScore; }
+            String get = scanner.nextLine().trim();
+            if (!get.isEmpty()) this.Score = Float.parseFloat(get);
+        } catch (Exception e) { }
     }
 }

@@ -12,16 +12,19 @@ public class Main {
 
         System.out.print("Nhap so luong nhan vien: ");
         int n = scanner.nextInt();
+        scanner.nextLine();
 
         for (int i = 0; i < n; i++) {
-            System.out.print("-== Thong tin cho nhan vien thu " + (i + 1));
+            System.out.println("-== Thong tin cho nhan vien thu " + (i + 1));
+
             Employee employee = new Employee();
             employee.init(scanner);
+
             employees.add(employee);
-            System.out.print("");
+            System.out.println("");
         }
 
-        System.out.print("");
+        System.out.println("");
         System.out.print("Nhap ID cua nhan vien can sua: ");
         String employeeId = scanner.nextLine();
 
@@ -31,6 +34,9 @@ public class Main {
             }
         }
 
-        
+        System.out.println("");
+        for (Employee employee : employees) {
+            employee.show();
+        }
     }
 }
