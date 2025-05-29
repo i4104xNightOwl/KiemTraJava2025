@@ -13,6 +13,7 @@ public class Person {
 
             System.out.print("Nhap tuoi: ");
             this.age = scanner.nextInt();
+            scanner.nextLine();
         } catch (Exception e) {
             System.out.println("Du lieu nhap vao khong hop le!");
         }

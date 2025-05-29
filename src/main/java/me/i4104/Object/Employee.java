@@ -14,15 +14,10 @@ public class Employee extends Person {
     @Override
     public void init(Scanner scanner) {
         try {
+            super.init(scanner);
+
             System.out.print("Nhap ma nhan vien: ");
             this.EmployeeId = scanner.nextLine();
-
-            System.out.print("Nhap ten: ");
-            this.name = scanner.nextLine();
-
-            System.out.print("Nhap tuoi: ");
-            this.age = scanner.nextInt();
-            scanner.nextLine();
 
             System.out.print("Nhap diem: ");
             this.Score = scanner.nextFloat();
