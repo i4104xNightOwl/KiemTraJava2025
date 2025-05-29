@@ -3,8 +3,8 @@ package me.i4104.Object;
 import java.util.Scanner;
 
 public class Person {
-    private String name;
-    private int age;
+    String name;
+    int age;
 
     public void init(Scanner scanner) {
         try {
