@@ -18,7 +18,19 @@ public class Main {
             Employee employee = new Employee();
             employee.init(scanner);
             employees.add(employee);
+            System.out.print("");
         }
+
+        System.out.print("");
+        System.out.print("Nhap ID cua nhan vien can sua: ");
+        String employeeId = scanner.nextLine();
+
+        for (Employee employee : employees) {
+            if (employee.getEmployeeId().contains(employeeId)) {
+                employee.edit(scanner);
+            }
+        }
+
         
     }
 }
